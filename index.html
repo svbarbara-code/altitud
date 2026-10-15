@@ -353,9 +353,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 [data-panel="days"] .dt-split{border-left:3px solid var(--ember)}
 [data-panel="days"] .dt-split-r{display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px;font-size:14px;line-height:1.4;color:var(--mist)}
 [data-panel="days"] .dt-split-r em{font-style:normal;font-weight:700;color:var(--ember)}
-#c-Day02 .alt-split,[data-panel="days"] .alt-split{display:flex;flex-direction:column;gap:6px;margin:4px 0 10px;padding:12px 16px;border:2px solid var(--ember);border-radius:12px;font-size:15px;line-height:1.45;color:var(--mist)}
-#c-Day02 .alt-split-k,[data-panel="days"] .alt-split-k{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--ember)}
-#c-Day02 .alt-split b,[data-panel="days"] .alt-split b{color:var(--mist)}
+#c-Day02 .alt-split,#c-SinchiWarmi .alt-split,[data-panel="days"] .alt-split{display:flex;flex-direction:column;gap:6px;margin:4px 0 10px;padding:12px 16px;border:2px solid var(--ember);border-radius:12px;font-size:15px;line-height:1.45;color:var(--mist)}
+#c-Day02 .alt-split-k,#c-SinchiWarmi .alt-split-k,[data-panel="days"] .alt-split-k{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--ember)}
+#c-Day02 .alt-split b,#c-SinchiWarmi .alt-split b,[data-panel="days"] .alt-split b{color:var(--mist)}
+
+/* Sinchi Warmi offer callout: moss, not ember (an option list, not a warning) */
+#c-SinchiWarmi .alt-offer,[data-panel="days"] .alt-offer{border-color:var(--moss)}
+#c-SinchiWarmi .alt-offer .alt-split-k,[data-panel="days"] .alt-offer .alt-split-k{color:var(--moss)}
 
 /* ---- tab: animals ---- */
 /* Animals tab: field guide + spotting game (tabs/animals.src.js). Brand tokens only. */
@@ -1885,7 +1889,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 </div>
 <div style="display: grid; grid-template-columns: calc(96 * var(--u)) minmax(0, 1fr); gap: 16px; align-items: baseline">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-size: max(calc(34 * var(--u)), 17.5px); font-weight: 900; line-height: 1; color: #E4572E">12:30</div>
-<div style="font-size: 17px; line-height: 1.4"><span style="font-weight: 700">Sinchi Warmi,</span> to 15:30: guayusa, maito lunch, medicinal-plant walk, crafts</div>
+<div style="font-size: 17px; line-height: 1.4"><span style="font-weight: 700">Sinchi Warmi,</span> to 15:30, English-speaking guide: maito cooking with lunch, plus the group's pick of chocolate, crafts or ancestral medicine. <span style="color: #C9D6BE">Offer in, not booked yet.</span></div>
 </div>
 <div style="display: grid; grid-template-columns: calc(96 * var(--u)) minmax(0, 1fr); gap: 16px; align-items: baseline">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-size: max(calc(34 * var(--u)), 17.5px); font-weight: 900; line-height: 1; color: #E4572E">16:30</div>
@@ -1982,10 +1986,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <div style="font-size: 17px; line-height: 1.45; color: #C9D6BE; margin-top: 10px">A non-profit lodge run by Kichwa women since 2002: guayusa welcome, maito lunch, cacao, a medicinal-plant walk and crafts.</div>
 <div style="margin-top: 18px; flex-shrink: 0"><svg style="width: calc(616 * var(--u)); height: auto; max-width: 100%" viewBox="0 0 616 190" role="img" aria-label="Diagram: after amaZOOnico the cars split; car A stops at Misahuallí Monkey Beach for the vaccinated, car B drives straight to Sinchi Warmi; both meet there for 12:30 to 15:30"><rect x="0" y="0" width="616" height="190" rx="12" fill="#14211C"></rect><text x="24" y="30" text-anchor="start" font-family="Manrope" font-weight="700" font-size="11" fill="#8FAE5D" letter-spacing="1.5">AFTER AMAZOONICO · ~11:15</text><circle cx="60" cy="100" r="10" fill="#8FAE5D"></circle><text x="60" y="128" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="11" fill="#C9D6BE">BARANTILLA</text><path d="M70,96 C140,60 200,60 270,64" fill="none" stroke="#E4572E" stroke-width="4" stroke-linecap="round"></path><path d="M70,104 C180,140 320,140 500,110" fill="none" stroke="#8FAE5D" stroke-width="4" stroke-linecap="round"></path><circle cx="280" cy="64" r="11" fill="#E4572E"></circle><text x="300" y="54" text-anchor="start" font-family="Manrope" font-weight="700" font-size="12" fill="#EEF1EA">CAR A · MISAHUALLÍ MONKEY BEACH</text><text x="300" y="70" text-anchor="start" font-family="Manrope" font-weight="600" font-size="11" fill="#C9D6BE">rabies-vaccinated only · 15 min · bags zipped</text><path d="M290,66 C380,74 450,90 500,110" fill="none" stroke="#E4572E" stroke-width="4" stroke-linecap="round"></path><text x="180" y="160" text-anchor="start" font-family="Manrope" font-weight="700" font-size="12" fill="#C9D6BE">CAR B · STRAIGHT ON, GUAYUSA WELCOME</text><circle cx="520" cy="110" r="14" fill="#E4572E"></circle><text x="560" y="100" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="16" fill="#EEF1EA">SINCHI</text><text x="560" y="118" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="16" fill="#EEF1EA">WARMI</text><text x="560" y="136" text-anchor="middle" font-family="Manrope" font-weight="600" font-size="11" fill="#C9D6BE">12:30–15:30</text></svg></div>
 <div style="margin-top: 18px; background: #E4572E; border-radius: 12px; padding: 14px 20px; color: #14211C; display: flex; flex-direction: column; gap: 4px">
-<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em">BOOK BY 30 OCT</div>
-<div style="font-size: 16px; line-height: 1.45; font-weight: 600">Public visits are listed Wed–Sat, so a Monday group needs a request with a 50% deposit. WhatsApp +593 99 875 4861 or sinchiwarmis@gmail.com. Groups of 1–28.</div>
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em">OFFER IN · NOT BOOKED YET</div>
+<div style="font-size: 16px; line-height: 1.45; font-weight: 600">Asociación de Mujeres Kichwas Sinchi Warmi sent an offer on 13 Oct for our Monday group. To book: a 50% deposit, ideally 2 weeks ahead (~16 Nov). The date isn't held until the deposit is paid. WhatsApp +593 99 875 4861 or sinchiwarmis@gmail.com.</div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px">
+<div class="alt-split alt-offer"><span class="alt-split-k">THE OFFER · PICK ACTIVITIES</span><span><b>Mon 30 Nov, 12:30–15:30</b> for 7–8 adults, with an English-speaking guide.</span><span><b>$35 · Maito cooking experience with lunch:</b> you make the maito with local leaves and ingredients, then eat it. It replaces a normal lunch.</span><span><b>$25 · Artisanal chocolate workshop</b></span><span><b>$25 · Amazonian crafts workshop</b></span><span><b>$20 · Ancestral medicine,</b> shared knowledge</span><span>Per person. Example: maito + 2 activities = $80–85 each. Durations pending; group to pick activities.</span></div>
 <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #8FAE5D; border-bottom: 1px solid #3F6B5A; padding-bottom: 8px">THE AFTERNOON</div>
 <div style="display: grid; grid-template-columns: calc(28 * var(--u)) minmax(0, 1fr); gap: 12px; align-items: baseline">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-size: max(calc(26 * var(--u)), 15.5px); font-weight: 900; color: #E4572E">1</div>
@@ -2008,7 +2013,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 </div>
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 18px"><div style="background: #14211C; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #8FAE5D">COST</div>
-<div style="font-size: 14px; line-height: 1.4">Est. $30–50 each, unpublished. Transfer + cash.</div>
+<div style="font-size: 14px; line-height: 1.4">Per activity, from the offer above (maito + 2 = $80–85 each). Transfer + cash.</div>
 </div><div style="background: #14211C; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #8FAE5D">MONKEY BEACH</div>
 <div style="font-size: 14px; line-height: 1.4">Wild capuchins grab bags and can bite. Vaccinated only.</div>
@@ -2577,7 +2582,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <div class="alt-energy"><span class="alt-energy-k">GOT ENERGY?</span> Mindo Canopy zipline at the 09:00 opening (about $20, ~1.5 h), shower at the house, then leave ~11:15 as planned.</div>
 <div style="display: grid; grid-template-columns: calc(96 * var(--u)) minmax(0, 1fr); gap: 16px; align-items: baseline">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-size: max(calc(34 * var(--u)), 17.5px); font-weight: 900; line-height: 1; color: #E4572E">12:00</div>
-<div style="font-size: 17px; line-height: 1.4"><span style="font-weight: 700">Tulipe site museum,</span> guided slot (~1 h, free, reserved)</div>
+<div style="font-size: 17px; line-height: 1.4"><span style="font-weight: 700">Tulipe site museum,</span> guided slot (~1 h, free). <span style="color: #C9D6BE">Requested 12 Oct, awaiting reply.</span></div>
 </div>
 <div style="display: grid; grid-template-columns: calc(96 * var(--u)) minmax(0, 1fr); gap: 16px; align-items: baseline">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-size: max(calc(34 * var(--u)), 17.5px); font-weight: 900; line-height: 1; color: #E4572E">13:15</div>
@@ -2631,8 +2636,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <svg style="width: calc(440 * var(--u)); height: auto; max-width: 100%" viewBox="0 0 440 210" role="img" aria-label="Saturday's route: leave Mindo at 11:15, Tulipe at 12:00, lunch in Nanegalito at 13:15, up over Calacalí to UIO, cars back by 17:00"><rect x="0" y="0" width="440" height="210" rx="12" fill="#14211C"></rect><path d="M20,132.6 L120,114.9 L190,106.1 L320,55.3 L420,84.0 L420,198 Q420,210 408,210 L32,210 Q20,210 20,198 Z" fill="#1E4A3B"></path><path d="M20,132.6 L120,114.9 L190,106.1 L320,55.3 L420,84.0" fill="none" stroke="#8FAE5D" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path><circle cx="20" cy="132.6" r="6" fill="#8FAE5D"></circle><text x="12" y="156.6" text-anchor="start" font-family="Manrope" font-weight="700" font-size="12" fill="#C9D6BE">MINDO</text><text x="12" y="171.6" text-anchor="start" font-family="Manrope" font-weight="600" font-size="11" fill="#C9D6BE">leave 11:15</text><circle cx="120" cy="114.9" r="11" fill="#E4572E"></circle><text x="120" y="98.9" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="14" fill="#EEF1EA">TULIPE</text><text x="120" y="83.9" text-anchor="middle" font-family="Manrope" font-weight="600" font-size="11" fill="#C9D6BE">12:00 slot · 1 h</text><circle cx="190" cy="106.1" r="6" fill="#8FAE5D"></circle><text x="190" y="130.1" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="12" fill="#C9D6BE">NANEGALITO</text><text x="190" y="145.1" text-anchor="middle" font-family="Manrope" font-weight="600" font-size="11" fill="#C9D6BE">lunch 13:15</text><circle cx="320" cy="55.3" r="6" fill="#8FAE5D"></circle><text x="320" y="39.3" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="12" fill="#C9D6BE">CALACALÍ</text><text x="320" y="24.299999999999997" text-anchor="middle" font-family="Manrope" font-weight="600" font-size="11" fill="#C9D6BE">2,830 m</text><circle cx="420" cy="84.0" r="8" fill="#EEF1EA"></circle><text x="428" y="108.0" text-anchor="end" font-family="Manrope" font-weight="700" font-size="12" fill="#EEF1EA">UIO</text><text x="428" y="123.0" text-anchor="end" font-family="Manrope" font-weight="600" font-size="11" fill="#C9D6BE">cars back ~17:00</text></svg>
 </div>
 <div style="margin-top: 18px; background: #E4572E; border-radius: 12px; padding: 14px 20px; color: #14211C; display: flex; flex-direction: column; gap: 4px">
-<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em">RESERVE A SLOT</div>
-<div style="font-size: 16px; line-height: 1.45; font-weight: 600">Groups of 5+ must book. Our 12:00 slot (11:00 also works); last safe slot 15:00. reservastulipeimp@gmail.com · (03) 262 9605 · 098 054 2967.</div>
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em">SLOT REQUESTED · AWAITING REPLY</div>
+<div style="font-size: 16px; line-height: 1.45; font-weight: 600">Groups of 5+ must book. A 12:00 guided visit for 5 adults was requested by email on 12 Oct; no reply yet (11:00 also works; last safe slot 15:00). reservastulipeimp@gmail.com · (03) 262 9605 · 098 054 2967.</div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px">
 <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #8FAE5D; border-bottom: 1px solid #3F6B5A; padding-bottom: 8px">THE VISIT</div>
@@ -4687,7 +4692,9 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
              split:[['07:15', "Breakfast at the penthouse for Ben's car"], ['07:30', 'The crater car leaves first, breakfast to go: down into Pululahua crater; start back up by 09:30 at the latest, to be on the rim before the ~11:30 fog'], ['08:30', "Ben's car leaves for UIO to collect Mike (lands 08:50), then the Ventanillas viewpoint"], ['~10:50', 'Both cars meet at Mirador de Ventanillas, Pululahua']] },
     Day03: { town:'Tena', alt:'510 m', m:510, energy:true,
              drive:{ from:'Quito', to:'Tena', km:'200 km', mi:'124 mi', time:'~4 h + Guango stop', when:'07:00 → ~13:00', peak:'over 4,060 m' } },
-    Day04: { town:'Tena', alt:'510 m', m:510, note:'Local: amaZOOnico by canoe, Misahuallí.' },
+    Day04: { town:'Tena', alt:'510 m', m:510, boxTitle:'Sinchi Warmi offer · not booked yet',
+             split:[['12:30', '–15:30, 7–8 adults, English-speaking guide'], ['$35', 'Maito cooking experience with lunch (replaces lunch)'], ['$25', 'Artisanal chocolate workshop'], ['$25', 'Amazonian crafts workshop'], ['$20', 'Ancestral medicine, shared knowledge']],
+             boxNote:'Per person; maito + 2 activities = $80–85. Durations pending; group to pick activities.' },
     Day05: { town:'Baños', alt:'1,820 m', m:1820,
              drive:{ from:'Tena', to:'Baños', km:'140 km', mi:'87 mi', time:'~3.5 h', when:'10:00 → ~16:30', peak:'via Puyo and the Pastaza canyon' } },
     Day06: { town:'Baños', alt:'1,820 m', m:1820, energy:true, note:'Local: dawn drive to the miradores.' },
@@ -4704,7 +4711,7 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
     Day01: [['06:55','Cassandra lands'],['13:30','La Compañía'],['14:00','Katt lands'],['16:00','Plaza Grande stroll'],['17:36','Bárbara lands'],['21:25','AJ, Amanda & Ben land']],
     Day02: [['07:15',"Breakfast (Ben's car); crater car takes it to go"],['07:30','Crater car leaves: Pululahua crater hike'],['08:30',"Ben's car leaves for UIO (Mike)"],['10:50','Both cars meet at Ventanillas'],['11:30','Fog cut-off at the rim'],['12:00','Lunch at El Cráter'],['13:15','Intiñán & Mitad del Mundo'],['16:00','MegaMaxi'],['17:45','El Panecillo'],['18:45','La Ronda'],['19:45','Casa Gangotena']],
     Day03: [['07:00','Depart Quito'],['08:15','La Virgen pass'],['08:45','Guango Lodge'],['10:45','Baeza'],['12:45','Lunch at El Bambú'],['15:00','Check in, pool'],['17:30','Malecón at dusk']],
-    Day04: [['08:15','Leave for Puerto Barantilla'],['09:30','amaZOOnico'],['11:30','Misahuallí'],['12:30','Sinchi Warmi'],['16:30','Pool'],['19:00','Dinner']],
+    Day04: [['08:15','Leave for Puerto Barantilla'],['09:30','amaZOOnico'],['11:30','Misahuallí'],['12:30','Sinchi Warmi (maito + chosen activities)'],['16:30','Pool'],['19:00','Dinner']],
     Day05: [['10:00','Depart Tena'],['11:45','Puyo'],['14:00','Pailón del Diablo'],['15:45','Manto de la Novia'],['16:30','Baños'],['17:45','Café Hood'],['19:15','Termas de la Virgen']],
     Day06: [['06:30','Leave for Runtún'],['07:00','Casa del Árbol'],['10:30','Mestizart'],['13:00','Central Market lunch'],['15:00','Spa'],['19:30','Swiss Bistro'],['20:00','Stargazing']],
     Day07: [['05:00','Optional Termas dip'],['08:30','Leave Baños'],['10:20','Saquisilí market'],['12:00','La Mamá Negra'],['14:15','Av. Simón Bolívar'],['15:15','Calacalí → Nanegalito'],['16:15','Mindo'],['17:30','Minroot'],['19:00','Night walk']],
@@ -4717,10 +4724,10 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
     Day01: 'Delta arrival time (maybe ~19:00–20:00)',
     Day02: 'Casa Gangotena booking, by ~15 Nov',
     Day03: 'Guango day visit not confirmed for 2026',
-    Day04: 'Sinchi Warmi Monday group, by 30 Oct',
+    Day04: 'Sinchi Warmi: offer in, not booked; 50% deposit ideally by ~16 Nov',
     Day07: 'Mindo house check-in time; 19:00 night-walk start',
     Day08: 'Brito reservation for 7',
-    Day09: '04:00 driver (backup if not confirmed by Fri 18:00); LA1401 on Sun 6 not booked',
+    Day09: '04:00 driver (backup if not confirmed by Fri 18:00); LA1401 on Sun 6 not booked; Tulipe 12:00 slot requested 12 Oct, awaiting reply',
   };
 
   // trip profile: overnight altitudes plus the Papallacta pass between days 2 and 3
@@ -4823,7 +4830,7 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
     const i = A.APP.days.findIndex(d => d.id === id), d = A.APP.days[i], m = META[id] || {};
     const out = [`Day ${i+1} · ${d.date} · ${m.town || d.title} (${m.alt || ''})`, d.sub];
     if (m.drive) out.push(`Drive: ${m.drive.from} → ${m.drive.to} · ${m.drive.km} / ${m.drive.mi} · ${m.drive.time} · ${m.drive.when}`);
-    else if (m.split) out.push('Two cars, two starts: ' + m.split.map(([t, w]) => t + ' ' + w).join('; '));
+    else if (m.split) out.push((m.boxTitle || 'Two cars, two starts') + ': ' + m.split.map(([t, w]) => t + ' ' + w).join('; ') + (m.boxNote ? '. ' + m.boxNote : ''));
     else if (m.note) out.push(m.note);
     (SCHED[id] || []).forEach(([t, w]) => out.push(`${t}  ${w}`));
     if (OPEN[id]) out.push(`To confirm: ${OPEN[id]}`);
@@ -4901,10 +4908,11 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
           </div>
         </div>` : m.split ? `
         <div class="dt-drive dt-split">
-          <span class="dt-drive-ic">${car}</span>
+          <span class="dt-drive-ic">${m.boxTitle ? PIN : car}</span>
           <div class="dt-drive-t">
-            <b>Two cars, two starts</b>
+            <b>${esc(m.boxTitle || 'Two cars, two starts')}</b>
             ${m.split.map(([t, w]) => `<span class="dt-split-r"><em>${esc(t)}</em>${esc(w)}</span>`).join('')}
+            ${m.boxNote ? `<span class="dt-drive-s">${esc(m.boxNote)}</span>` : ''}
           </div>
         </div>` : (m.note ? `<p class="dt-note">${esc(m.note)}</p>` : '');
       const chips = d.places.map(p => `<button type="button" class="dt-chip" data-pop="${p.id}" aria-haspopup="dialog">${esc(p.title)}</button>`).join('');
