@@ -361,6 +361,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 #c-SinchiWarmi .alt-offer,[data-panel="days"] .alt-offer{border-color:var(--moss)}
 #c-SinchiWarmi .alt-offer .alt-split-k,[data-panel="days"] .alt-offer .alt-split-k{color:var(--moss)}
 
+/* Bárbara's own days: locked until she unlocks them on her phone; quieter than the group days, dashed node, "Only you" tag */
+[data-panel="days"] .dt-solo-box[hidden],[data-panel="days"] .dt-solo-box.is-open .dt-solo-lock,[data-panel="days"] .dt-solo-box:not(.is-open) .dt-solo-note{display:none}
+[data-panel="days"] .dt-solo-lock{display:flex;flex-direction:column;gap:8px;margin:12px 0 4px;padding:12px 14px;border:1.5px dashed var(--sage);border-radius:12px}
+[data-panel="days"] .dt-solo-lock .dt-only{align-self:flex-start}
+[data-panel="days"] .dt-solo-lock label{font-size:14px;line-height:1.4;color:var(--sage)}
+[data-panel="days"] .dt-solo-row{display:flex;gap:8px}
+[data-panel="days"] .dt-solo-row input{flex:1;min-width:0;min-height:44px;box-sizing:border-box;border:1.5px solid var(--rule);border-radius:10px;background:var(--basalt);color:var(--mist);font:inherit;font-size:16px;padding:0 12px}
+[data-panel="days"] .dt-solo-row button{min-height:44px;padding:0 16px;border-radius:10px;background:var(--moss);color:var(--basalt);font-weight:700;font-size:15px}
+[data-panel="days"] .dt-solo-err{margin:0;font-size:13px;color:var(--ember)}
+[data-panel="days"] .dt-solo-note{margin:12px 0 4px;font-size:13px;line-height:1.4;color:var(--sage);border-left:2px dashed var(--sage);padding-left:10px}
+[data-panel="days"] .dt-solo-forget{min-height:44px;padding:0 4px;color:var(--moss);font-weight:700;font-size:13px;text-decoration:underline}
+[data-panel="days"] .dt-only{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);border:1px dashed var(--sage);border-radius:6px;padding:2px 6px}
+[data-panel="days"] .dt-solo .dt-node{background:var(--basalt);border-style:dashed;border-color:var(--sage)}
+[data-panel="days"] .dt-solo .dt-town{font-size:26px;color:var(--sage)}
+[data-panel="days"] .dt-solo-head{grid-template-columns:minmax(0,1fr);min-height:0}
+[data-panel="days"] .dt-solo-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.4;color:var(--sage)}
+
 /* ---- tab: animals ---- */
 /* Animals tab: field guide + spotting game (tabs/animals.src.js). Brand tokens only. */
 [data-panel="animals"] [hidden]{display:none !important}
@@ -4742,6 +4759,91 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
     Day09: '04:00 driver (backup if not confirmed by Fri 18:00); Tulipe 12:00 slot requested 12 Oct, awaiting reply',
   };
 
+  // Bárbara's own days around the group leg (from her trip planner, 22 Oct). The page source is public, so they ship
+  // encrypted (tabs/days.solo/enc.mjs, local only) and only show when the name picked on Today is "Bárbara" AND she has
+  // unlocked them once on that phone with her passphrase. Everyone else sees the group days only.
+  const SOLO_ME = 'Bárbara', SOLO_KEY = 'altitud:days:soloPass';
+  const SOLO_BLOB = /*SOLO*/{ it:210000, s:'PUANyA7I5mohhxMlejKfgQ==', iv:'GF3dUP/8nlQ0f8aF', c:'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' }/*END SOLO*/;
+  let soloData = null;
+  const isMe = () => { try { return A.store.get('altitud:me') === SOLO_ME; } catch (e) { return false; } };
+  const localIso = () => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); };
+  async function soloDecrypt(pass){
+    if (!SOLO_BLOB || !(window.crypto && crypto.subtle)) return null;
+    const un = b => Uint8Array.from(atob(b), ch => ch.charCodeAt(0));
+    try {
+      const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
+      const key = await crypto.subtle.deriveKey({ name:'PBKDF2', salt:un(SOLO_BLOB.s), iterations:SOLO_BLOB.it, hash:'SHA-256' }, base, { name:'AES-GCM', length:256 }, false, ['decrypt']);
+      const out = await crypto.subtle.decrypt({ name:'AES-GCM', iv:un(SOLO_BLOB.iv) }, key, un(SOLO_BLOB.c));
+      return JSON.parse(new TextDecoder().decode(out));
+    } catch (e) { return null; }
+  }
+  function soloRows(list){
+    const today = localIso();
+    return list.map(d => {
+      const dp = dayParts(d.date), state = d.iso < today ? 'past' : d.iso === today ? 'today' : 'next';
+      const times = d.times ? `
+          <div class="dt-drive dt-split">
+            <span class="dt-drive-ic">${PIN}</span>
+            <div class="dt-drive-t">${d.times.map(([t, w]) => `<span class="dt-split-r"><em>${esc(t)}</em>${esc(w)}</span>`).join('')}</div>
+          </div>` : '';
+      return `
+      <li class="dt-day dt-solo is-${state}" id="dt-solo-${esc(d.iso)}">
+        <div class="dt-date" aria-hidden="true"><span class="dt-wd">${esc(dp.wd)}</span><span class="dt-d">${esc(dp.d)}</span><span class="dt-mo">${esc(dp.mo)}</span></div>
+        <div class="dt-node" aria-hidden="true"></div>
+        <div class="dt-body">
+          <div class="dt-head dt-solo-head">
+            <span class="dt-k">${esc(d.k)}<span class="dt-only">Only you</span>${state === 'today' ? '<span class="dt-today">Today</span>' : ''}</span>
+            <span class="dt-town">${esc(d.town)}</span>
+            <span class="dt-sub">${esc(d.sub)}</span>
+          </div>
+          ${d.open ? `<p class="dt-open"><span>To confirm</span> ${esc(d.open)}</p>` : ''}
+          ${times}
+          ${d.list ? `<ul class="dt-solo-list">${d.list.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+        </div>
+      </li>`;
+    }).join('');
+  }
+  // show, lock or remove the solo days for whoever is picked on Today (re-checked every time the tab is shown)
+  async function applySolo(panel){
+    const root = panel || document.querySelector('[data-panel="days"]'); if (!root) return;
+    const box = root.querySelector('.dt-solo-box'), list = root.querySelector('.dt-list'); if (!box || !list) return;
+    const clear = () => root.querySelectorAll('.dt-solo').forEach(el => el.remove());
+    if (!isMe() || !SOLO_BLOB) { clear(); box.hidden = true; return; }
+    if (!soloData) { const p = A.store.get(SOLO_KEY); if (p) soloData = await soloDecrypt(p); }
+    box.hidden = false;
+    box.classList.toggle('is-open', !!soloData);
+    if (!soloData || root.querySelector('.dt-solo')) return;
+    list.insertAdjacentHTML('afterbegin', soloRows(soloData.before || []));
+    list.insertAdjacentHTML('beforeend', soloRows(soloData.after || []));
+  }
+  function soloBox(){
+    return `
+        <div class="dt-solo-box" hidden>
+          <form class="dt-solo-lock">
+            <span class="dt-only">Only you</span>
+            <label for="dt-solo-pass">Your own days, 19–26 Nov and 6–14 Dec, are locked. Enter your passphrase once on this phone.</label>
+            <div class="dt-solo-row"><input id="dt-solo-pass" type="password" autocomplete="current-password" autocapitalize="off" spellcheck="false"><button type="submit">Unlock</button></div>
+            <p class="dt-solo-err" hidden>That passphrase didn't work.</p>
+          </form>
+          <p class="dt-solo-note"><span class="dt-only">Only you</span> Your own days before and after the group are on the trail. Nobody else sees them. <button type="button" class="dt-solo-forget">Lock again</button></p>
+        </div>`;
+  }
+  function hookSolo(panel){
+    const form = panel.querySelector('.dt-solo-lock'), err = panel.querySelector('.dt-solo-err');
+    if (form) form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const inp = form.querySelector('input'), pass = inp.value.trim(); if (!pass) return;
+      const data = await soloDecrypt(pass);
+      if (!data) { err.hidden = false; return; }
+      err.hidden = true; inp.value = ''; soloData = data; A.store.set(SOLO_KEY, pass); applySolo(panel);
+    });
+    const forget = panel.querySelector('.dt-solo-forget');
+    if (forget) forget.addEventListener('click', () => {
+      soloData = null; try { A.store.set(SOLO_KEY, ''); } catch (e) {}
+      panel.querySelectorAll('.dt-solo').forEach(el => el.remove()); applySolo(panel);
+    });
+  }
+
   // trip profile: overnight altitudes plus the Papallacta pass between days 2 and 3
   const PROFILE_PASS = 4060, PMAX = 4200;
   const MAXM = 2850;
@@ -4963,6 +5065,7 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
         <div class="dt-status"><span class="dt-eyebrow">${esc(s.label)}</span><span class="dt-big">${esc(s.big)}</span>
           <span class="dt-sum">9 days · 4 towns · ~775 km / 481 mi on 4 transfer days</span></div>
         ${profile()}
+        ${soloBox()}
         <div class="dt-listbar"><button type="button" class="dt-all" aria-pressed="false">Unfold all days</button></div>
         <ol class="dt-list">${rows}</ol>
         ${A.todayId ? '<button type="button" class="dt-jump" hidden data-scroll="dt-' + A.todayId + '">Today</button>' : ''}
@@ -5064,6 +5167,7 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
     if (jumpBtn && todayLi && 'IntersectionObserver' in window) {
       new IntersectionObserver(es => es.forEach(en => { jumpBtn.hidden = en.isIntersecting; })).observe(todayLi);
     }
+    hookSolo(panel); applySolo(panel);
     nowNext();
     if (A.todayId) setInterval(nowNext, 60e3);
     setTimeout(hookForecast, 0);   // Practical (the provider) renders after Days
@@ -5071,6 +5175,11 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
 
   function onShow(){
     nowNext();
+    // Bárbara on one of her own days: bring that day into view once per day
+    applySolo().then(() => {
+      const el = isMe() && document.getElementById('dt-solo-' + localIso()), k = 'altitud:daysScrolled:solo:' + localIso();
+      if (el && !A.store.get(k)) { A.store.set(k, '1'); requestAnimationFrame(() => jump(el, 160)); }
+    });
     hookForecast();
     if (A.todayId && !A.store.get('altitud:daysScrolled:' + A.idx)) {
       const el = document.getElementById('dt-' + A.todayId);
