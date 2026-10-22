@@ -750,9 +750,15 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 @media (max-width:360px){[data-panel="foods"] .fd-name{font-size:19px}[data-panel="foods"] .fd-tick span{display:none}[data-panel="foods"] .fd-rank{font-size:28px}}
 
 /* Foods-only bits */
-[data-panel="foods"] .fd-farewell{display:flex;align-items:center;gap:12px;width:100%;margin-top:14px;padding:12px 14px;min-height:56px;box-sizing:border-box;text-align:left;border:1.5px solid var(--ember);border-radius:12px;font-size:14px;line-height:1.35;color:var(--sage)}
-[data-panel="foods"] .fd-farewell b{color:var(--ember)}
-[data-panel="foods"] .fd-farewell .chev{width:20px;height:20px;flex-shrink:0;color:var(--ember)}
+[data-panel="foods"] .fd-dinners{margin-top:14px;padding:12px 14px;border:1.5px solid var(--ember);border-radius:12px}
+[data-panel="foods"] .fd-dinners h3{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ember)}
+[data-panel="foods"] .fd-dinner{padding:10px 0}
+[data-panel="foods"] .fd-dinner + .fd-dinner{border-top:1px solid var(--rule)}
+[data-panel="foods"] .fd-dinner p{margin:0 0 6px;font-size:14px;line-height:1.4;color:var(--sage)}
+[data-panel="foods"] .fd-dinner p b{color:var(--mist)}
+[data-panel="foods"] .fd-dinner .fd-resv b{color:var(--ember)}
+[data-panel="foods"] .fd-dinner .fd-days{margin-top:4px}
+[data-panel="foods"] a.fd-daylink{text-decoration:none}
 [data-panel="foods"] .fd-photo:empty,[data-panel="foods"] .fd-photo{min-height:0}
 [data-panel="foods"] .fd-today{font-size:10px;font-weight:700;letter-spacing:.1em;border-radius:6px;padding:2px 6px;background:var(--ember);color:var(--basalt)}
 [data-panel="foods"] .fd-what{font-size:12px;line-height:1.35;color:var(--mist);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -5221,7 +5227,7 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
 <script src="tabs/animals.js?v=2239a02b"></script>
 <script>
 </script>
-<script src="tabs/foods.js?v=ca8c0684"></script>
+<script src="tabs/foods.js?v=16764a1c"></script>
 <script>
 /* ---- tab: plan ---- */
 /* Plan tab: an at-a-glance planning dashboard. Every fact is read from the card HTML in ALT.cards
