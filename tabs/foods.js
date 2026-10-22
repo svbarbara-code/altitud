@@ -349,19 +349,9 @@ ALT.tabs.foods = (function(){
         </div>
         <div class="fd-board" hidden></div>
 
-        <section class="fd-dinners" aria-labelledby="h-fd-dinners">
-          <h3 id="h-fd-dinners">Special dinners</h3>
-          <div class="fd-dinner">
-            <p><b>Sat 28 Nov, ~19:45 \u00b7 Casa Gangotena, Quito.</b> Plaza San Francisco, 0.5 km / 0.3 mi from La Ronda. Smart casual. Dinner 18:30\u201322:00, unconfirmed: from the hotel's own site (a 2019 page, checked Oct 2026), so confirm when booking.</p>
-            <p class="fd-resv"><b>Reserve by ~1 Nov</b> on OpenTable or WhatsApp +593 97 999 9995, a table for 7. Not booked yet.</p>
-            <div class="fd-days"><a class="fd-daylink" href="https://www.google.com/maps/search/?api=1&query=Restaurante+Casa+Gangotena+Quito" target="_blank" rel="noopener">Map${ALT.chev}</a><button type="button" class="fd-daylink" data-go="Day02">Sat 28 card${ALT.chev}</button></div>
-          </div>
-          <div class="fd-dinner">
-            <p><b>Fri 4 Dec, 18:00 \u00b7 Brito Restaurante, Mindo (farewell).</b> Via a Las Cascadas km 1.2, about 1.5 km / 0.9 mi uphill, so take a co-op taxi. Tandayapa Valley trout, about $19 each.</p>
-            <p class="fd-resv"><b>Reserve by ~15 Nov</b> on WhatsApp +593 99 088 9176 (reservations required); ask for a set or shared menu for 7. Not booked yet.</p>
-            <div class="fd-days"><button type="button" class="fd-daylink fd-farewell" data-id="tandayapa-valley-trout">The trout${ALT.chev}</button><a class="fd-daylink" href="https://www.google.com/maps/search/?api=1&query=Brito+Restaurante+Mindo" target="_blank" rel="noopener">Map${ALT.chev}</a><button type="button" class="fd-daylink" data-go="Day08">Fri 4 card${ALT.chev}</button></div>
-          </div>
-        </section>
+        <button type="button" class="fd-farewell" data-id="tandayapa-valley-trout">
+          <span><b>Farewell dinner, Fri 4 Dec.</b> Brito Restaurante, Mindo: Tandayapa Valley trout, about $19 each. Tap for the dish.</span>${ALT.chev}
+        </button>
 
         <label class="fd-search">${icon.search}<input type="search" placeholder="Search: trout, cuy, chocolate\u2026" aria-label="Search dishes" autocomplete="off"></label>
         <div class="fd-filters" role="toolbar" aria-label="Filter by day and place">${chips()}</div>
