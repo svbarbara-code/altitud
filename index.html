@@ -372,11 +372,21 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 [data-panel="days"] .dt-solo-err{margin:0;font-size:13px;color:var(--ember)}
 [data-panel="days"] .dt-solo-note{margin:12px 0 4px;font-size:13px;line-height:1.4;color:var(--sage);border-left:2px dashed var(--sage);padding-left:10px}
 [data-panel="days"] .dt-solo-forget{min-height:44px;padding:0 4px;color:var(--moss);font-weight:700;font-size:13px;text-decoration:underline}
-[data-panel="days"] .dt-only{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);border:1px dashed var(--sage);border-radius:6px;padding:2px 6px}
-[data-panel="days"] .dt-solo .dt-node{background:var(--basalt);border-style:dashed;border-color:var(--sage)}
-[data-panel="days"] .dt-solo .dt-town{font-size:26px;color:var(--sage)}
-[data-panel="days"] .dt-solo-head{grid-template-columns:minmax(0,1fr);min-height:0}
 [data-panel="days"] .dt-solo-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.4;color:var(--sage)}
+
+/* solo days, v2 (22 Oct): solid lock chip, lock in the node, dashed trail segment, quiet tinted card with a thin sage edge */
+[data-panel="days"] .dt-only{display:inline-flex;align-items:center;gap:4px;height:18px;padding:0 8px 0 6px;border-radius:999px;background:var(--sage);color:var(--forest);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;line-height:1;white-space:nowrap;flex:none}
+[data-panel="days"] .dt-only svg{width:10px;height:10px;flex:none}
+[data-panel="days"] .dt-solo::before{content:"";position:absolute;left:60px;top:0;bottom:0;width:5px;background:var(--forest)}
+[data-panel="days"] .dt-solo::after{content:"";position:absolute;left:61px;top:0;bottom:0;border-left:3px dashed var(--sage);opacity:.45}
+[data-panel="days"] .dt-solo .dt-node{width:22px;height:22px;margin:7px 0 0 4px;border:1.5px solid var(--sage);background:var(--basalt);color:var(--sage);display:flex;align-items:center;justify-content:center;z-index:2}
+[data-panel="days"] .dt-solo .dt-node svg{width:12px;height:12px}
+[data-panel="days"] .dt-solo .dt-body{background:rgba(20,33,28,.45);border-left:3px solid rgba(201,214,190,.55);border-radius:0 12px 12px 0;padding:10px 12px 12px;margin-left:2px}
+[data-panel="days"] .dt-solo-head{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:0;padding:0}
+[data-panel="days"] .dt-solo .dt-k{min-height:18px;flex-wrap:wrap;row-gap:4px}
+[data-panel="days"] .dt-solo .dt-town{font-size:26px;line-height:1.05;color:var(--sage);padding-top:1px}
+[data-panel="days"] .dt-solo .dt-drive{background:var(--basalt)}
+[data-panel="days"] .dt-solo.is-today .dt-node{border-color:var(--ember);color:var(--ember);box-shadow:0 0 0 4px rgba(228,87,46,.25)}
 
 /* ---- tab: animals ---- */
 /* Animals tab: field guide + spotting game (tabs/animals.src.js). Brand tokens only. */
@@ -4777,6 +4787,8 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
       return JSON.parse(new TextDecoder().decode(out));
     } catch (e) { return null; }
   }
+  const LOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+  const ONLY = '<span class="dt-only">' + LOCK + 'Only you</span>';
   function soloRows(list){
     const today = localIso();
     return list.map(d => {
@@ -4789,10 +4801,10 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
       return `
       <li class="dt-day dt-solo is-${state}" id="dt-solo-${esc(d.iso)}">
         <div class="dt-date" aria-hidden="true"><span class="dt-wd">${esc(dp.wd)}</span><span class="dt-d">${esc(dp.d)}</span><span class="dt-mo">${esc(dp.mo)}</span></div>
-        <div class="dt-node" aria-hidden="true"></div>
+        <div class="dt-node" aria-hidden="true">${LOCK}</div>
         <div class="dt-body">
           <div class="dt-head dt-solo-head">
-            <span class="dt-k">${esc(d.k)}<span class="dt-only">Only you</span>${state === 'today' ? '<span class="dt-today">Today</span>' : ''}</span>
+            <span class="dt-k">${esc(d.k)}${ONLY}${state === 'today' ? '<span class="dt-today">Today</span>' : ''}</span>
             <span class="dt-town">${esc(d.town)}</span>
             <span class="dt-sub">${esc(d.sub)}</span>
           </div>
@@ -4820,12 +4832,12 @@ const APP = {"days": [{"id": "Day01", "date": "Fri 27 Nov", "title": "Quito", "s
     return `
         <div class="dt-solo-box" hidden>
           <form class="dt-solo-lock">
-            <span class="dt-only">Only you</span>
+            ${ONLY}
             <label for="dt-solo-pass">Your own days, 19–26 Nov and 6–14 Dec, are locked. Enter your passphrase once on this phone.</label>
             <div class="dt-solo-row"><input id="dt-solo-pass" type="password" autocomplete="current-password" autocapitalize="off" spellcheck="false"><button type="submit">Unlock</button></div>
             <p class="dt-solo-err" hidden>That passphrase didn't work.</p>
           </form>
-          <p class="dt-solo-note"><span class="dt-only">Only you</span> Your own days before and after the group are on the trail. Nobody else sees them. <button type="button" class="dt-solo-forget">Lock again</button></p>
+          <p class="dt-solo-note">${ONLY} Your own days before and after the group are on the trail. Nobody else sees them. <button type="button" class="dt-solo-forget">Lock again</button></p>
         </div>`;
   }
   function hookSolo(panel){
